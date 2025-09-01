@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Toyhouse Downloader",
+  "version": "0.1.1",
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": [
+    "downloads"
+  ],
+
+  "host_permissions": [
+    "*://f2.toyhou.se/file/f2-toyhou-se/images/*"
+  ],
+
+  "action": {
+    "default_title": "Toyhouse Downloader"
+  },
+  
+  "content_scripts": [
+    {
+      "js": [
+        "src/main.js"
+      ],
+      "matches": [
+        "*://toyhou.se/*/gallery"
+      ]
+    }
+  ]
+}
